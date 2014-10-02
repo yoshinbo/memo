@@ -13,7 +13,7 @@ initWithCoderが呼ばれる
 # UIViewControllerで個別のstoryboadを使う場合
 * Hoge StoryBoadを作成
 * 読み込む側のViewController
-`
+
 import UIKit
 class HomeViewController: UIViewController {
     // 略
@@ -29,9 +29,9 @@ class HomeViewController: UIViewController {
         self.contentScrollView.addSubview(hogeVc.view);
     }
 }
-`
+
 * 読み込まれる側のViewController
-`
+
 import UIKit
 class HogeViewController: UIViewController {
     class func connectionViewController() -> (HogeViewController) {
@@ -40,4 +40,3 @@ class HogeViewController: UIViewController {
         return (viewController as HogeViewController);
     }
 }
-`
