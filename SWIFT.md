@@ -1,3 +1,17 @@
+# Swift memo
+
+## 32bit端末と64bit端末(iphon5s以降)のromdom関数について
+The debugger is misleading you. The real problem is arc4random,
+which will return an UInt32 on both iPhone 5 and 5s. But as iPhone 5 is a 32-bit device,
+the Int(arc4random()) will cause an overflow if the random number is big enough.
+Instead of using Int(arc4random()), you can try to replace it by using arc4random_uniform.
+```swift
+    // 32bit端末だと動かない
+    var randomIndex: Int = Int(arc4random()) % (panels.count)
+    // これだと両方動く
+    var randomIndex: Int = Int(arc4random_uniform(UInt32(panels.count)))
+```
+
 ## initとinitWithCoderの違い
 StoryBoadで追加されたViewControllerはイニシャライズの時
 initWithCoderが呼ばれる
