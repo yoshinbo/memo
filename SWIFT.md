@@ -13,7 +13,7 @@ initWithCoderが呼ばれる
 ## UIViewControllerで個別のstoryboadを使う場合
 * Hoge StoryBoadを作成
 * 読み込む側のViewController
-* 
+
 ```swift
 import UIKit
 class HomeViewController: UIViewController {
@@ -43,4 +43,28 @@ class HogeViewController: UIViewController {
         return (viewController as HogeViewController);
     }
 }
+```
+
+## cocoapods
+ライブラリを管理してくれる便利な人
+* インストール
+なんか0.40系だとうまく動かないよう(2014/10/04現在)
+
+```bash
+sudo gem install pods -v 0.34.1
+pod setup
+```
+* Podfileお作成
+ここにいろいろとライブラリの依存関係を記載していく
+プロジェクトルートにPodfileを用意して下記のように記述
+
+```bash
+platform : ios, "8.0"
+pod 'AFNetworking', '~> 2.0'
+```
+
+ライブラリのインストール
+Podfileのあるディレクトリで
+```bash
+pod install
 ```
