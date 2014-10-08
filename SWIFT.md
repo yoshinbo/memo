@@ -59,6 +59,25 @@ class HogeViewController: UIViewController {
 }
 ```
 
+## UIViewControllerで他のUIViewControllerを使う場合
+* StoryBoadに読み込むUIViewControllerを定義
+```
+StoryBoadで定義したUIViewControllerのIdentity:StoryBoadIDに名前を定義
+ここでは仮にhogeVcとする
+```
+* 読み込む側のUIViewController
+```swift
+let vc = self.storyboard?.instantiateViewControllerWithIdentifier("HogeVc") as UIViewController;
+```
+* 読み込んだUIViewControllerのviewを自分のCustomUIViewを使う
+```
+StoryBoadで定義したUIViewControllerの中のUIViewに自分でつくったCustomUIViewとする
+コードでは
+let domainPicker = vc.view as MyCustomUIView;
+とすればそのまま使える
+StoryBoad上からIBOutletをCutomViewに貼付けることもできる
+```
+
 ## cocoapods
 ライブラリを管理してくれる便利な人
 * インストール
