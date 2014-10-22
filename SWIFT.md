@@ -78,10 +78,52 @@ let domainPicker = vc.view as MyCustomUIView;
 StoryBoad上からIBOutletをCutomViewに貼付けることもできる
 ```
 
+## イベント
+NSNotificationCenter
+
+## UNIXタイム
+* エポックからミリ行を取得
+時刻取得関数 CFAbsoluteTimeGetCurrent() は2001年1月1日を起点としていて
+1970年1月1日から2001年1月1日までの経過時間の値が定数kCFAbsoluteTimeIntervalSince1970
+として用意されているので二つを足すと現在時間のミリ秒がでる
+```
+var now = CFAbsoluteTimeGetCurrent() + kCFAbsoluteTimeIntervalSince1970;
+```
+
+## UIView
+* UIViewのキャプチャをとる
+```
+func convertViewToImage()->UIImage{
+    UIGraphicsBeginImageContext(self.bounds.size); // self is UIView
+    self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: true);
+    var image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+```
+http://qiita.com/nasu_st/items/561d8946966015abd448
+
+* ブラーをバックぐらんどに設定
+```
+func setBackgroundBlur(){
+    var blurredImage = self.view.convertViewToImage();
+    blurredImage = blurredImage.applyBlurWithRadius(10, tintColor: UIColor(white: 1.0, alpha: 0.2), saturationDeltaFactor: 1.3, maskImage: nil);
+    self.view.backgroundColor = UIColor(patternImage: blurredImage);
+}
+```
+
+## UITextView
+TextViewの文字列を上そろえにする方法
+```
+self.textView.textContainer.lineFragmentPadding = 0; // 左のpaddingを0に
+self.textView.textContainerInset = UIEdgeInsetsZero; // 上のpaddingを0に
+```
+
 ## cocoapods
 ライブラリを管理してくれる便利な人
 * インストール
 なんか0.40系だとうまく動かないよう(2014/10/04現在)
+yosemiteだと動かないらしい(2014/10/20現在)
 
 ```bash
 sudo gem install pods -v 0.34.1
