@@ -118,6 +118,13 @@ TextViewの文字列を上そろえにする方法
 self.textView.textContainer.lineFragmentPadding = 0; // 左のpaddingを0に
 self.textView.textContainerInset = UIEdgeInsetsZero; // 上のpaddingを0に
 ```
+## Storyboad
+* storyboadからUIViewだけ取り出してセット
+```swift
+var storyboad: UIStoryboard = UIStoryboard(name: "HogeViewController", bundle: nil)
+var hogeUIViewController = storyboad.instantiateViewControllerWithIdentifier("HogeUIView") as UIViewController
+self.view.addSubview(hogeUIViewController.view)
+```
 
 ## cocoapods
 ライブラリを管理してくれる便利な人
