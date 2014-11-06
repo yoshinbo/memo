@@ -112,6 +112,16 @@ func setBackgroundBlur(){
 }
 ```
 
+* タップした時のアクションを追加
+```
+override func viewDidLoad() {
+    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hoge:"))
+}
+
+func close(sender: UITapGestureRecognizer) {
+}
+```
+
 ## UITextView
 TextViewの文字列を上そろえにする方法
 ```
