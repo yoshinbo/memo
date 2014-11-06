@@ -118,7 +118,7 @@ override func viewDidLoad() {
     self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hoge:"))
 }
 
-func close(sender: UITapGestureRecognizer) {
+func hoge(sender: UITapGestureRecognizer) {
 }
 ```
 
