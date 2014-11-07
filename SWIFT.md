@@ -89,6 +89,22 @@ NSNotificationCenter
 ```
 var now = CFAbsoluteTimeGetCurrent() + kCFAbsoluteTimeIntervalSince1970;
 ```
+## UIViewController
+* 最前面のViewControllerを取得する
+```
+// 最前面のViewContorllerを返す。最前面がNavigationViewControllerの場合はそのtopViewContollerを返す。
+class func topMostController() -> UIViewController {
+    var topController = UIApplication.sharedApplication().keyWindow!.rootViewController!;
+    while((topController.presentedViewController) != nil) {
+        topController = topController.presentedViewController!
+    }
+    if topController.isKindOfClass(UINavigationController) {
+        var naviVc = topController as UINavigationController
+        topController = naviVc.topViewController
+    }
+    return topController
+}
+```
 
 ## UIView
 * UIViewのキャプチャをとる
