@@ -81,6 +81,9 @@ StoryBoad上からIBOutletをCutomViewに貼付けることもできる
 ## イベント
 NSNotificationCenter
 
+## アニメーション
+CAKeyframeAnimation
+
 ## UNIXタイム
 * エポックからミリ行を取得
 時刻取得関数 CFAbsoluteTimeGetCurrent() は2001年1月1日を起点としていて
