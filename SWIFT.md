@@ -80,6 +80,15 @@ StoryBoad上からIBOutletをCutomViewに貼付けることもできる
 
 ## イベント
 NSNotificationCenter
+http://dev.classmethod.jp/references/ios-8-swift-nsnotification-userinfo/
+
+ちゃんと消しましょう。
+```
+override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated);
+    NSNotificationCenter.defaultCenter().removeObserver(self);
+}
+```
 
 ## アニメーション
 CAKeyframeAnimation
