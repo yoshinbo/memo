@@ -149,6 +149,17 @@ override func viewDidLoad() {
 func hoge(sender: UITapGestureRecognizer) {
 }
 ```
+## AlertController
+アラート出したいときさくっとでるので便利
+```
+var alertViewController = UIAlertController(title: "title", message: "message", preferredStyle: UIAlertControllerStyle.Alert)
+alertViewController.addAction(UIAlertAction(title: "いいえ", style: .Cancel, handler: nil))
+alertViewController.addAction(UIAlertAction(title: "はい", style: .Default, handler: {
+    (action:UIAlertAction!) -> Void in
+        println("OK")
+}))
+self.presentViewController(alertViewController, animated: true, completion: nil)
+```
 
 ## UITextView
 TextViewの文字列を上そろえにする方法
