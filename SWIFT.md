@@ -164,6 +164,10 @@ var hogeUIViewController = storyboad.instantiateViewControllerWithIdentifier("Ho
 self.view.addSubview(hogeUIViewController.view)
 ```
 
+## Mail送信
+http://www.mikamiz.jp/dev/iphone/a0005.html
+http://stackoverflow.com/questions/24311073/mfmailcomposeviewcontroller-in-swift
+
 ## cocoapods
 ライブラリを管理してくれる便利な人
 * インストール
