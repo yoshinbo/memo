@@ -179,6 +179,9 @@ self.view.addSubview(hogeUIViewController.view)
 http://www.mikamiz.jp/dev/iphone/a0005.html
 http://stackoverflow.com/questions/24311073/mfmailcomposeviewcontroller-in-swift
 
+## ローカライズ
+https://akira-watson.com/iphone/localization.html
+
 ## cocoapods
 ライブラリを管理してくれる便利な人
 * インストール
