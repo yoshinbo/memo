@@ -206,3 +206,16 @@ Podfileのあるディレクトリで
 ```bash
 pod install
 ```
+
+## GLDTween アニメーション
+```swift
+        GLDTween.addTween(heartImageView, withParams: [
+            "duration"      : 0.5,
+            "delay"         : 1.5,
+            "easing"        : GLDEasingInSine,
+            "alpha"         : 0.0
+            "completionBLock" : GLDTweenBlock({
+                heartImageView.removeFromSuperview()
+            })
+        ])
+```
