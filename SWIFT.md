@@ -219,3 +219,13 @@ pod install
             })
         ])
 ```
+
+## MagicalRecord
+明示的にcontextを指定した方がよい
+```swift
+var context = Util.mrContext()
+var hogeDto = hogeDto.MR_findFirstByAttribute("id", withValue: id, inContext:context)
+context.deleteObject( hogeDto )
+context. MR_saveToPersistentStoreAndWait()
+```
+別スレッドで実行する場合でも、このコードなら問題ないが、MR_findFirstByAttributeのなかで何が使われるかわからないため。
