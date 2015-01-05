@@ -78,6 +78,18 @@ let domainPicker = vc.view as MyCustomUIView;
 StoryBoad上からIBOutletをCutomViewに貼付けることもできる
 ```
 
+## ステータスバーとナビバーの高さ
+* ステータスバーの高さ
+```swift
+UIApplication.sharedApplication().statusBarFrame.size.height
+```
+* ナビバーの高さ
+```swift
+if let naviController = self.navigationController {
+    naviController.toolbar.frame.size.height
+}
+```
+
 ## イベント
 NSNotificationCenter
 http://dev.classmethod.jp/references/ios-8-swift-nsnotification-userinfo/
