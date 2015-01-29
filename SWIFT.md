@@ -132,11 +132,16 @@ class func topMostController() -> UIViewController {
 
 ## UIView
 * UIViewのwindowからみた絶対座標をとる
-http://qiita.com/glayash/items/25d54ff2c9d91f0b6673
 ```
 self.convertPoint(CGPoint.zeroPoint, toView: self.window);
 // UIButtonのimageViewの場合
 self.imageView!.convertPoint(CGPoint.zeroPoint, toView: self.window);
+```
+http://qiita.com/glayash/items/25d54ff2c9d91f0b6673
+
+* UIImageViewでイメージ色をtintColorに統一する
+```
+UIImage(named: "tum_up_active_icon.pdf")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
 ```
 * UIViewのキャプチャをとる
 ```
