@@ -191,6 +191,11 @@ TextViewの文字列を上そろえにする方法
 self.textView.textContainer.lineFragmentPadding = 0; // 左のpaddingを0に
 self.textView.textContainerInset = UIEdgeInsetsZero; // 上のpaddingを0に
 ```
+## UITextField
+オートコンプリートをしないようにする方法
+```
+self.textField.autocorrectionType = .No
+```
 ## Storyboad
 * storyboadからUIViewだけ取り出してセット
 ```swift
