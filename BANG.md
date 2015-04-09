@@ -5,11 +5,11 @@ bundle exec rails g migration init
 ```
 
 ## 新しくモデル作るとき
-### 開発中はdb/migrate/20150406041827_init.rbを編集するのでmigration作成は不要
+開発中はdb/migrate/20150406041827_init.rbを編集するのでmigration作成は不要
 ```
 bundle exec rails d model user --skip-migration
 ```
-### モデルにコメントつけるgit commit hookに追加
+モデルにコメントつけるgit commit hookに追加
 ```
 bundle exec annotate
 ```
